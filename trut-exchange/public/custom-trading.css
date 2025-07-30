@@ -1,180 +1,259 @@
 /* Custom CSS for ApolloX Trading Interface */
 
-/* Override ApolloX default styles to match Trut branding */
+/* Enhanced Trut Branding Variables */
 :root {
-  --trut-primary: #8b5cf6;
+  /* Primary Colors */
+  --trut-primary: #a855f7;
+  --trut-primary-hover: #9333ea;
   --trut-secondary: #3b82f6;
+  --trut-secondary-hover: #2563eb;
   --trut-accent: #ec4899;
+  --trut-accent-hover: #db2777;
+  
+  /* Background Colors */
   --trut-bg-primary: #111827;
   --trut-bg-secondary: #1f2937;
+  --trut-bg-tertiary: #374151;
+  --trut-bg-glass: rgba(31, 41, 55, 0.8);
+  
+  /* Text Colors */
   --trut-text-primary: #f9fafb;
   --trut-text-secondary: #d1d5db;
-  --trut-border: #374151;
-  --trut-glow: rgba(139, 92, 246, 0.4);
+  --trut-text-tertiary: #9ca3af;
+  
+  /* Border Colors */
+  --trut-border-primary: rgba(168, 85, 247, 0.3);
+  --trut-border-secondary: rgba(59, 130, 246, 0.2);
+  --trut-border-subtle: rgba(55, 65, 81, 0.5);
+  
+  /* Glow Effects */
+  --trut-glow-primary: rgba(168, 85, 247, 0.4);
+  --trut-glow-secondary: rgba(59, 130, 246, 0.3);
+  --trut-glow-success: rgba(16, 185, 129, 0.3);
+  --trut-glow-danger: rgba(239, 68, 68, 0.3);
 }
 
-/* Main trading container styling */
-.trading-interface {
-  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%);
-  backdrop-filter: blur(10px);
+/* Enhanced Main Trading Interface */
+.trading-interface,
+[class*="trading-interface"] {
+  background: 
+    linear-gradient(135deg, var(--trut-bg-primary) 0%, var(--trut-bg-secondary) 50%, var(--trut-bg-primary) 100%),
+    radial-gradient(circle at 20% 80%, var(--trut-glow-primary) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, var(--trut-glow-secondary) 0%, transparent 50%) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid var(--trut-border-primary) !important;
 }
 
-/* Enhanced neon effects for trading interface */
-.trading-interface * {
+/* Enhanced Scrollbar for Trading Interface */
+.trading-interface *,
+[class*="trading-interface"] * {
   scrollbar-width: thin;
-  scrollbar-color: var(--trut-primary) var(--trut-bg-primary);
+  scrollbar-color: var(--trut-primary) var(--trut-bg-primary) !important;
 }
 
-/* Chart container */
-.chart-container {
-  border-radius: 12px;
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  background: rgba(17, 24, 39, 0.8);
-}
-
-/* Order form styling */
-.order-form-card {
-  background: rgba(31, 41, 55, 0.9) !important;
-  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+/* Enhanced Chart Container */
+.chart-container,
+[class*="chart"] {
   border-radius: 12px !important;
-  backdrop-filter: blur(10px);
+  border: 1px solid var(--trut-border-primary) !important;
+  background: var(--trut-bg-glass) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 4px 20px var(--trut-glow-primary) !important;
 }
 
-/* Button overrides */
+/* Enhanced Order Form */
+.order-form-card {
+  background: var(--trut-bg-glass) !important;
+  border: 1px solid var(--trut-border-primary) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 8px 32px var(--trut-glow-primary) !important;
+}
+
+/* Enhanced Button Styling */
 .button {
   border-radius: 8px !important;
   font-weight: 600 !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.button::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+  transition: left 0.5s ease !important;
+}
+
+.button:hover::before {
+  left: 100% !important;
 }
 
 .button-primary {
-  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
-  border: 1px solid #8b5cf6 !important;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3) !important;
+  background: linear-gradient(135deg, var(--trut-primary) 0%, var(--trut-secondary) 100%) !important;
+  border: 1px solid var(--trut-primary) !important;
+  box-shadow: 0 4px 20px var(--trut-glow-primary) !important;
+  color: var(--trut-text-primary) !important;
 }
 
 .button-primary:hover {
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4) !important;
-  transform: translateY(-1px) !important;
+  background: linear-gradient(135deg, var(--trut-primary-hover) 0%, var(--trut-secondary-hover) 100%) !important;
+  box-shadow: 0 8px 32px var(--trut-glow-primary) !important;
+  transform: translateY(-2px) scale(1.02) !important;
 }
 
-/* Input field styling */
+/* Enhanced Input Fields */
 .input-text-field,
 .input-base-input {
-  background: rgba(17, 24, 39, 0.8) !important;
-  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  background: var(--trut-bg-glass) !important;
+  border: 1px solid var(--trut-border-primary) !important;
   border-radius: 8px !important;
-  color: #f9fafb !important;
-  transition: all 0.3s ease !important;
+  color: var(--trut-text-primary) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(8px) !important;
 }
 
 .input-text-field:focus,
 .input-base-input:focus {
-  border-color: #8b5cf6 !important;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+  border-color: var(--trut-primary) !important;
+  box-shadow: 
+    0 0 0 3px var(--trut-glow-primary),
+    0 4px 12px var(--trut-glow-primary) !important;
+  background: var(--trut-bg-secondary) !important;
 }
 
-/* Dialog and modal styling */
+/* Enhanced Dialogs and Modals */
 .dialog-content {
-  background: rgba(31, 41, 55, 0.95) !important;
-  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  background: var(--trut-bg-glass) !important;
+  border: 1px solid var(--trut-border-primary) !important;
   border-radius: 16px !important;
   backdrop-filter: blur(20px) !important;
+  box-shadow: 0 20px 60px var(--trut-glow-primary) !important;
 }
 
-/* Sheet content */
+/* Enhanced Sheet Content */
 .sheet-content {
-  background: rgba(17, 24, 39, 0.95) !important;
-  border: 1px solid rgba(139, 92, 246, 0.2) !important;
+  background: var(--trut-bg-glass) !important;
+  border: 1px solid var(--trut-border-secondary) !important;
   backdrop-filter: blur(20px) !important;
+  box-shadow: 0 12px 40px var(--trut-glow-secondary) !important;
 }
 
-/* Radio button styling */
+/* Enhanced Radio Buttons */
 .radio-option {
-  background: rgba(17, 24, 39, 0.6) !important;
-  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  background: var(--trut-bg-glass) !important;
+  border: 1px solid var(--trut-border-primary) !important;
   border-radius: 8px !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(6px) !important;
 }
 
 .radio-option:hover {
-  background: rgba(139, 92, 246, 0.1) !important;
-  border-color: #8b5cf6 !important;
+  background: var(--trut-bg-secondary) !important;
+  border-color: var(--trut-primary) !important;
+  box-shadow: 0 4px 12px var(--trut-glow-primary) !important;
+  transform: translateY(-1px) !important;
 }
 
 .radio-option.selected {
-  background: rgba(139, 92, 246, 0.2) !important;
-  border-color: #8b5cf6 !important;
+  background: var(--trut-bg-secondary) !important;
+  border-color: var(--trut-primary) !important;
+  box-shadow: 0 0 0 2px var(--trut-glow-primary) !important;
 }
 
-/* Currency input */
+/* Enhanced Currency Input */
 .currency-input {
-  background: rgba(17, 24, 39, 0.8) !important;
-  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  background: var(--trut-bg-glass) !important;
+  border: 1px solid var(--trut-border-primary) !important;
   border-radius: 8px !important;
+  backdrop-filter: blur(8px) !important;
 }
 
-/* Direction switches */
+/* Enhanced Direction Switches */
 .direction-switch-long {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
   border: 1px solid #10b981 !important;
   border-radius: 8px !important;
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 0 4px 16px var(--trut-glow-success) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.direction-switch-long:hover {
+  box-shadow: 0 8px 24px var(--trut-glow-success) !important;
+  transform: translateY(-2px) !important;
 }
 
 .direction-switch-short {
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
   border: 1px solid #ef4444 !important;
   border-radius: 8px !important;
-  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
+  box-shadow: 0 4px 16px var(--trut-glow-danger) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* Table styling */
+.direction-switch-short:hover {
+  box-shadow: 0 8px 24px var(--trut-glow-danger) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Enhanced Table Styling */
 .table-row {
-  border-bottom: 1px solid rgba(139, 92, 246, 0.1) !important;
-  transition: background-color 0.2s ease !important;
+  border-bottom: 1px solid var(--trut-border-subtle) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .table-row:hover {
-  background: rgba(139, 92, 246, 0.05) !important;
+  background: var(--trut-bg-glass) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 2px 8px var(--trut-glow-primary) !important;
 }
 
-/* Scrollbar styling */
+/* Enhanced Scrollbar for Trading Components */
 .trading-interface ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px !important;
+  height: 8px !important;
 }
 
 .trading-interface ::-webkit-scrollbar-track {
-  background: rgba(31, 41, 55, 0.5);
-  border-radius: 3px;
+  background: var(--trut-bg-primary) !important;
+  border-radius: 4px !important;
 }
 
 .trading-interface ::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.6);
-  border-radius: 3px;
+  background: linear-gradient(135deg, var(--trut-primary), var(--trut-secondary)) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 0 6px var(--trut-glow-primary) !important;
 }
 
 .trading-interface ::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 92, 246, 0.8);
+  background: linear-gradient(135deg, var(--trut-primary-hover), var(--trut-secondary-hover)) !important;
+  box-shadow: 0 0 10px var(--trut-glow-primary) !important;
 }
 
-/* Price change colors */
+/* Enhanced Price Colors */
 .price-up {
   color: #10b981 !important;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.5) !important;
 }
 
 .price-down {
   color: #ef4444 !important;
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.5) !important;
 }
 
-/* Loading states */
+/* Enhanced Loading States */
 .loading-spinner {
-  border-color: rgba(139, 92, 246, 0.3) !important;
-  border-top-color: #8b5cf6 !important;
+  border-color: var(--trut-border-primary) !important;
+  border-top-color: var(--trut-primary) !important;
+  box-shadow: 0 0 20px var(--trut-glow-primary) !important;
 }
 
-/* Responsive adjustments */
+/* Enhanced Responsive Design */
 @media (max-width: 768px) {
   .order-form-card {
     margin: 8px !important;
@@ -187,7 +266,7 @@
   }
 }
 
-/* Animation keyframes */
+/* Enhanced Animation Keyframes */
 @keyframes glow {
   0%, 100% {
     box-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
@@ -197,6 +276,26 @@
   }
 }
 
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .glow-animation {
   animation: glow 2s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
 }

@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
 import Header from '@/components/Header';
-
+import TradingInterface from '@/components/TradingInterface';
+import Footer from '@/components/Footer';
 // Dynamically import TradingInterface to avoid SSR issues
 const TradingInterface = dynamic(() => import('@/components/TradingInterface'), {
   ssr: false,
@@ -18,11 +19,12 @@ const TradingInterface = dynamic(() => import('@/components/TradingInterface'), 
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex flex-col">
       <Header />
-      <main className="relative">
+      <main className="flex-1 relative">
         <TradingInterface />
       </main>
+      <Footer />
 
       {/* Load ApolloX SDK */}
       <Script 
