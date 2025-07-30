@@ -1,0 +1,195 @@
+/* Custom CSS for ApolloX Trading Interface */
+
+/* Override ApolloX default styles to match Trut branding */
+:root {
+  --trut-primary: #8b5cf6;
+  --trut-secondary: #3b82f6;
+  --trut-accent: #ec4899;
+  --trut-bg-primary: #111827;
+  --trut-bg-secondary: #1f2937;
+  --trut-text-primary: #f9fafb;
+  --trut-text-secondary: #d1d5db;
+  --trut-border: #374151;
+}
+
+/* Main trading container styling */
+.trading-interface {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%);
+  backdrop-filter: blur(10px);
+}
+
+/* Chart container */
+.chart-container {
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(17, 24, 39, 0.8);
+}
+
+/* Order form styling */
+.order-form-card {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Button overrides */
+.button {
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
+  border: 1px solid #8b5cf6 !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3) !important;
+}
+
+.button-primary:hover {
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Input field styling */
+.input-text-field,
+.input-base-input {
+  background: rgba(17, 24, 39, 0.8) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  border-radius: 8px !important;
+  color: #f9fafb !important;
+  transition: all 0.3s ease !important;
+}
+
+.input-text-field:focus,
+.input-base-input:focus {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+}
+
+/* Dialog and modal styling */
+.dialog-content {
+  background: rgba(31, 41, 55, 0.95) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Sheet content */
+.sheet-content {
+  background: rgba(17, 24, 39, 0.95) !important;
+  border: 1px solid rgba(139, 92, 246, 0.2) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Radio button styling */
+.radio-option {
+  background: rgba(17, 24, 39, 0.6) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.radio-option:hover {
+  background: rgba(139, 92, 246, 0.1) !important;
+  border-color: #8b5cf6 !important;
+}
+
+.radio-option.selected {
+  background: rgba(139, 92, 246, 0.2) !important;
+  border-color: #8b5cf6 !important;
+}
+
+/* Currency input */
+.currency-input {
+  background: rgba(17, 24, 39, 0.8) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  border-radius: 8px !important;
+}
+
+/* Direction switches */
+.direction-switch-long {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: 1px solid #10b981 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+}
+
+.direction-switch-short {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  border: 1px solid #ef4444 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Table styling */
+.table-row {
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1) !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.table-row:hover {
+  background: rgba(139, 92, 246, 0.05) !important;
+}
+
+/* Scrollbar styling */
+.trading-interface ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.trading-interface ::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.5);
+  border-radius: 3px;
+}
+
+.trading-interface ::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.6);
+  border-radius: 3px;
+}
+
+.trading-interface ::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}
+
+/* Price change colors */
+.price-up {
+  color: #10b981 !important;
+}
+
+.price-down {
+  color: #ef4444 !important;
+}
+
+/* Loading states */
+.loading-spinner {
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  border-top-color: #8b5cf6 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .order-form-card {
+    margin: 8px !important;
+    border-radius: 8px !important;
+  }
+  
+  .dialog-content {
+    margin: 16px !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* Animation keyframes */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+  }
+}
+
+.glow-animation {
+  animation: glow 2s ease-in-out infinite;
+}
