@@ -10,12 +10,19 @@
   --trut-text-primary: #f9fafb;
   --trut-text-secondary: #d1d5db;
   --trut-border: #374151;
+  --trut-glow: rgba(139, 92, 246, 0.4);
 }
 
 /* Main trading container styling */
 .trading-interface {
   background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%);
   backdrop-filter: blur(10px);
+}
+
+/* Enhanced neon effects for trading interface */
+.trading-interface * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--trut-primary) var(--trut-bg-primary);
 }
 
 /* Chart container */

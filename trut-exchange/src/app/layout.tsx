@@ -6,9 +6,9 @@ import Providers from '@/components/WagmiProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Trut Crypto Exchange - Perpetual Futures Trading',
-  description: 'Advanced perpetual futures trading platform powered by ApolloX. Trade crypto derivatives with up to 750x leverage.',
-  keywords: 'crypto, futures, trading, perpetual, derivatives, DeFi, Web3',
+  title: 'Trut Crypto Exchange - BNB Smart Chain Perpetuals',
+  description: 'Professional perpetuals crypto exchange on BNB Smart Chain powered by ApolloX. Trade crypto derivatives with advanced features.',
+  keywords: 'crypto, futures, trading, perpetual, derivatives, DeFi, Web3, BNB, Smart Chain, BSC',
   authors: [{ name: 'Trut Exchange' }],
   openGraph: {
     title: 'Trut Crypto Exchange',
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Trut Crypto Exchange',
-    description: 'Advanced perpetual futures trading platform',
+    title: 'Trut Crypto Exchange - BNB Smart Chain Perpetuals',
+    description: 'Professional perpetuals crypto exchange on BNB Smart Chain powered by ApolloX',
+    description: 'Professional perpetuals crypto exchange on BNB Smart Chain powered by ApolloX',
   },
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',

@@ -1,11 +1,12 @@
 'use client';
 
-import ConnectWallet from './ConnectWallet';
 import { useState } from 'react';
+import ConnectWallet from './ConnectWallet';
+import { TrendingUp, Zap, BarChart3 } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-gray-900/80 border-b border-gray-800">
       <div className="container mx-auto px-4">
@@ -13,7 +14,7 @@ const Header = () => {
           {/* Logo and Brand */}
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/25">
                 <span className="text-white font-bold text-sm">T</span>
               </div>
               <div>
@@ -25,15 +26,27 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Navigation - Desktop */}
+          {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
+            <a 
+              href="#" 
+              className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-200"
+            >
+              <TrendingUp className="w-4 h-4" />
               Trading
             </a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
+            <a 
+              href="#" 
+              className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-200"
+            >
+              <Zap className="w-4 h-4" />
               Markets
             </a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
+            <a 
+              href="#" 
+              className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors duration-200"
+            >
+              <BarChart3 className="w-4 h-4" />
               Portfolio
             </a>
           </nav>
@@ -45,7 +58,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-400 hover:text-white"
+              className="md:hidden text-gray-300 hover:text-white transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />

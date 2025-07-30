@@ -56,7 +56,8 @@ const TradingInterface = () => {
               headerConfig: {
                 disable: true, // We're using our own header
               },
-              supportNetworks: ['bnb', 'arb'],
+              supportNetworks: ['bnb'], // Only BNB Smart Chain
+              supportLanguages: ['en'],
               supportLanguages: ['en', 'zh-CN', 'ja', 'ko'],
               enableThemeToggle: false,
             },
